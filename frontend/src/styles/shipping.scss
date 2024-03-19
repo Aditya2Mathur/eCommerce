@@ -1,0 +1,78 @@
+.shipping{
+    .backBtn{
+        @include square(2.5rem);
+        background-color: $color3;
+        color: $color1;
+        @include flex;
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        border-radius: 100%;
+        border: none;
+        outline: none;
+        @include baseShadow;
+
+        svg{
+            transition: all 0.3s;
+        }
+        &:hover svg{
+            translate: -0.25rem;
+        }
+    }
+    form {
+        margin: 3rem auto 0;
+        width: 24rem;
+      
+        div {
+          width: inherit;
+          margin-bottom: 1rem;
+        }
+        
+      
+      
+        input,
+        select,
+        textarea {
+          margin: 0.5rem 0;
+          padding: 0.5rem;
+          width: inherit;
+          height: 2rem;
+          border: 2px solid $color3;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+       
+        .submitBTn{
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            width: inherit;
+            height: 2rem;
+            border: 2px solid $color3;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: $color2;
+            .submitBTn{
+                transition: all 0.3s;
+            }
+            &:hover {
+                color: #fff;
+                background-color: $color3;
+                scale:  1.01;
+                translate: -0.25rem;
+            }
+            
+        }
+        
+        input[type="submit"] {
+          height: 2.5rem;
+          font-size: 1rem;
+          color: #fff;
+          background: #0971f1;
+          cursor: pointer;
+        }
+      
+        textarea {
+          height: 5rem;
+        }
+      }
+}

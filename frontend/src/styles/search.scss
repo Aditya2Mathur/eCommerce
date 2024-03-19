@@ -1,0 +1,218 @@
+.search {
+    padding: 2rem;
+    @include flex(row, flex-start, stretch, 2rem);
+    min-height: calc(100vh - 6.5rem);
+
+    >aside {
+        min-width: 20rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        border-radius: 10px;
+        @include flex(column, flex-start, stretch, 0.5rem);
+        padding: 2rem;
+
+        >h2 {
+            @include heading;
+        }
+
+        >div {
+            >select {
+                width: 20rem;
+                padding: 1rem 4rem 1rem 1rem;
+                border: 2px solid black;
+                color: rgb(0, 0, 0);
+                border-radius: 34px;
+                box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+
+                >option {
+                    color: black;
+                    border-radius: 34px;
+                    width: 20rem;
+                }
+            }
+
+            >input,
+            >select {
+                @include inputStyle(100%, 1rem, white, 1px solid rgba(154, 154, 154, 0.38))
+            }
+
+            
+        }
+        >.rangeBar{
+            >.rangeStyle {
+                
+                width: 256px;
+                height: 10px;
+                -webkit-appearance: none;
+                background: #111;
+                outline: none;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+            }
+            >.rangeStyle::-webkit-slider-thumb {
+                -webkit-appearance: none;
+               width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background: #ffce00;
+                cursor: pointer;
+                border: 4px solid #333;
+                box-shadow: -407px 0 0 400px #fcf107;
+              }
+        }
+    }
+
+    >main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: calc(100% - 22rem);
+
+        >.products {
+            display: flex;
+            gap: 4rem;
+            justify-content: start;
+            flex-wrap: wrap;
+
+            .ProductCard {
+                flex-basis: 20%;
+                position: relative;
+                width: 250px;
+                height: 350px;
+                background-color: #191919;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+
+            .ProductCard::before {
+                content: "";
+                position: absolute;
+                top: -50%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, rgba(255, 193, 7, 1) 0%, rgb(238, 215, 147) 100%);
+                transform: skewY(345deg);
+                transition: 0.5s;
+            }
+
+            .ProductCard:hover::before {
+                top: -70%;
+                transform: skewY(390deg);
+            }
+
+            .ProductCard::after {
+                content: "Product";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-weight: 600;
+                font-size: 6em;
+                color: rgba(0, 0, 0, 0.1);
+            }
+
+            .ProductCard>.imgBox {
+                background-color: #101010;
+
+                >img {
+                    position: relative;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    margin: auto;
+                    padding-top: 15px;
+                    z-index: 1;
+                    background-color: transparent;
+
+                }
+            }
+
+            .ProductCard>.imgBox>img {
+                height: 230px;
+                width: auto;
+            }
+
+            .ProductCard>.detailBox {
+                position: relative;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 2;
+                background-color: #101010;
+            }
+
+            .ProductCard>.detailBox>h3 {
+                font-size: 16px;
+                color: white;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                background: none;
+            }
+
+            .ProductCard>.detailBox>h2 {
+                font-size: 18px;
+                color: white;
+                font-weight: 700;
+                letter-spacing: 1px;
+                background: none;
+            }
+
+            .ProductCard>.detailBox>button {
+                position: relative;
+                top: 80px;
+                opacity: 0;
+                padding: 10px 20px;
+                margin-top: 10px;
+                color: #000000;
+                text-decoration: none;
+                background: #ffce00;
+                border-radius: 30px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: 0.5s;
+            }
+
+            .ProductCard:hover>.detailBox>button {
+                top: 0;
+                opacity: 1;
+            }
+        }
+
+        >.searchInput {
+            display: flex;
+            justify-content: space-between;
+
+            >h2 {
+                font-size: xx-large;
+            }
+
+            >input {
+                margin-bottom: 40px;
+                font-size: 16px;
+                line-height: 1.5;
+                background: #FFFFFF;
+                background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19'><path fill='%23838D99' d='M13.98 12.57a2 2 0 0 1 1.93.52l2.5 2.5a2 2 0 0 1-2.82 2.82l-2.5-2.5a2 2 0 0 1-.52-1.93l-1.38-1.37a7 7 0 1 1 1.42-1.42l1.37 1.38zm-3.37-2.03a5 5 0 1 0-7.08-7.08 5 5 0 0 0 7.08 7.08z'></path></svg>");
+                background-repeat: no-repeat;
+                background-position: 10px 10px;
+                background-size: 20px 20px;
+                border: 1px solid #C5CBD5;
+                box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+                border-radius: 8px;
+                width: 300px;
+                padding: .5em 1em .5em 2.5em;
+            }
+
+            .input-inset::placeholder {
+                color: #838D99;
+            }
+
+            .input-inset:focus {
+                outline: none;
+                border: 1px solid #84A2FA;
+            }
+        }
+    }
+}

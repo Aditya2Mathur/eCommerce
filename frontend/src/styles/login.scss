@@ -1,0 +1,76 @@
+body{
+    background-image: url(../../public/backgrounds/2147957037.jpg);
+    
+}
+    
+.login {
+    
+    position: relative;
+    height: 500px;
+    width: 400px;
+    margin: 5% auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    border-radius: 5px; 
+}
+
+.login h1 {
+    z-index: 1;
+    text-align: center;
+    color: #333;
+}
+
+.login main {
+    height: 80%;
+    margin-top: 2px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.signUp{
+    color: #007bff;
+}
+#loginBtn{
+    background-color: #fcf107;
+    color: #101010;
+    font-weight: bold;
+}
+#loginBtn:hover{
+    background-color: #0056b3;
+}
+.login button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;   
+}
+.btnUppar{
+    @include flex(column);
+    align-items: baseline;
+    > button{
+        span{
+        background-color: transparent;
+    }}
+}
+.login button:hover {
+    background-color: #0056b3;
+}
+

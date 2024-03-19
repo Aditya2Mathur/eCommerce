@@ -1,0 +1,39 @@
+.header {
+  // Existing styles remain unchanged
+  display: flex;
+  justify-content: space-around;
+  gap: 20rem;
+  padding-top: 20px;
+  background-color: transparent;
+  >div{
+    display: flex;
+    gap: 3rem;
+    >button{
+      background-color: transparent;
+      border: none;
+      >img{
+        
+        width: 120px;
+      }
+    }
+    >a{
+      background: none;   
+      color: black;
+    }
+    >a:hover{
+        color: #ffc107;
+    }
+  }
+  >.container3{
+    background: none;
+    display: flex;
+    justify-content: end;
+  }
+  >.container2{
+    background: none;
+  }  
+  >.container1{
+    background: none;
+  }  
+
+}
