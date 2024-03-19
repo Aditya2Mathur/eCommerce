@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
-export interface NewUserRequestBody{
+export interface NewUserRequestBody {
     _id: string,
     name: string,
     email: string,
@@ -17,5 +17,5 @@ export interface NewProductRequestBody {
     category: string;
 }
 
-export type ControllerType = (req: Request, res: Response, next: NextFunction) => Promise<void | Response<any, Record<string, any>>>
+export type ControllerType = (req: Request<any>, res: Response, next: NextFunction) => Promise<void | Response<any, Record<string, any>>>
 

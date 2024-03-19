@@ -12,8 +12,7 @@ export const NewProduct = TryCatch(async (req:Request<{},{}, NewProductRequestBo
     if(!photo) return  next (new ErrorHandler("Photo is required",400));
     if(!name ||  !price || !stock || !category ){
         rm(photo.path, ()=>{
-            console.log(`first file removed ${photo.filename}`);
-            
+            console.log(`first file removed ${photo.filename}`);   
         })
         return next (new ErrorHandler("All fields are required",400))
     }
@@ -22,7 +21,7 @@ export const NewProduct = TryCatch(async (req:Request<{},{}, NewProductRequestBo
         name,
         price,
         stock,
-        category,
+        category: category.toLowerCase(),
         photo: photo.path
     })
 

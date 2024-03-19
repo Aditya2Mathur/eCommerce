@@ -17,7 +17,7 @@ export const NewProduct = TryCatch(async (req, res, next) => {
         name,
         price,
         stock,
-        category,
+        category: category.toLowerCase(),
         photo: photo.path
     });
     res.status(201).json({
